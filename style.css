@@ -62,10 +62,12 @@ header {
   opacity: 0.9;
 }
 
+.liste {
+  counter-reset: number-list;
+}
 .liste ol {
   display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
+  gap: 2rem;
 }
 @media (max-width: 780px) {
   .liste ol {
@@ -73,15 +75,33 @@ header {
   }
 }
 .liste li {
+  position: relative;
+  list-style-type: none;
   background-color: #F6F6F6;
-  padding: 1rem 2rem;
-  border: 1px solid red;
+  padding: 1.5rem 2rem;
   flex-grow: 1;
   border-radius: 1rem;
   box-shadow: 2px 1px 8px -3px #000000;
 }
+.liste li::before {
+  content: counter(number-list);
+  counter-increment: number-list;
+  color: white;
+  background-color: #9356DC;
+  width: 2rem;
+  height: 2rem;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 1rem;
+  left: -1rem;
+}
 .liste li:hover {
   transform: scale(1.04);
+}
+.liste li i.fas {
+  margin-right: 1rem;
 }
 
 /*# sourceMappingURL=style.css.map */
