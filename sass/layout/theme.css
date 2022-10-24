@@ -1,0 +1,12 @@
+.theme {
+  background-color: #f6f6f6;
+}/*# sourceMappingURL=theme.css.map */
+
+.choice__menu {
+  display: flex;
+}
+
+.menu {
+  border: 1px solid black;
+  height: 4rem;
+}

@@ -1,0 +1,69 @@
+@use "./utils/variables.scss";
+@use "./utils/colors.scss";
+
+.theme {
+    background-color: #F6F6F6;
+    margin-bottom: 2rem;
+
+    .choice__menu {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+
+        @media (max-width: variables.$breakpoint) {
+            grid-template-columns: repeat (1, 1fr);
+        }
+
+        .nouveau {
+            position: relative;
+        }
+
+        .nouveau::before {
+            content: "Nouveau";
+            position: absolute;
+            height: 2rem;
+            width: 6rem;
+            background-color: colors.$color-tertiaire;
+            color: darken(colors.$color-tertiaire, 40%);
+            display: grid;
+            place-items: center;
+            right: 1rem;
+            top: 1rem;
+        }
+    }
+
+    .menu {
+        &__image {
+            height: 15rem;
+            background-size: cover;
+            object-fit: cover;
+            border-radius: 1rem 1rem 0 0;
+        }
+
+        @for $i from 1 through 4 {
+            &__image-#{$i} {
+                background-image: url(./assets/restaurant-#{$i}.jpg);
+            }
+        }
+
+        &__description {
+            position: relative;
+            h3,p {
+                margin: 0.5rem;
+                
+            }
+
+            h3 {
+                padding-top: 0.5rem;
+            }
+
+            i {
+                font-size: 2rem;
+                position: absolute;
+                right: 1rem;
+                top: 50%;
+                transform: translateY(-50%)
+            }
+        }
+    }
+}

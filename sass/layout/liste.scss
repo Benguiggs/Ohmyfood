@@ -5,6 +5,7 @@
 
 .liste {
     counter-reset: number-list;
+    margin-bottom: 2rem;
     & ol {
         display: flex;
         gap: 2rem;
@@ -20,15 +21,16 @@
             content: counter(number-list);
             counter-increment: number-list;
             color: white;
-            background-color: colors.$lightpurple;
+            background-color: colors.$purple;
             width: 2 * variables.$height-base-liste;
             height: 2 * variables.$height-base-liste;
             display: grid;
             place-items: center;
             border-radius: 50%;
             position: absolute;
-            bottom: variables.$height-base-liste;
+            bottom: 50%;
             left: -1 * variables.$height-base-liste;
+            transform: translateY(+50%);
         }
         list-style-type: none;
         background-color: #F6F6F6;
