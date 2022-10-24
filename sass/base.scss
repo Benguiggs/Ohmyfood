@@ -9,11 +9,15 @@
 
 body {
     margin: 0px;
-    font-family: "Roboto" , sans-serif;
+    font-family: "Roboto", sans-serif;
 }
 
 main {
-    padding: 0 1rem;
+    padding: 0 7rem;
+
+    @media (max-width: 1000px) {
+        padding: 0 1 rem;
+    }
 }
 
 h2 {
@@ -21,11 +25,12 @@ h2 {
     margin: 0;
 }
 
-h3,p {
-margin: 0;
+h3,
+p {
+    margin: 0;
 }
 
 a {
-text-decoration: none;
-color: inherit;
+    text-decoration: none;
+    color: inherit;
 }
