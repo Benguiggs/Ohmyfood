@@ -1,12 +1,102 @@
 .theme {
-  background-color: #f6f6f6;
+  background-color: #F6F6F6;
+  margin-bottom: 2rem;
+}
+.theme .choice__menu {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+@media (max-width: 1000px) {
+  .theme .choice__menu {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+.theme .choice__menu .nouveau {
+  position: relative;
+}
+.theme .choice__menu .nouveau::before {
+  content: "Nouveau";
+  position: absolute;
+  height: 2rem;
+  width: 6rem;
+  background-color: #99E2D0;
+  color: #278870;
+  display: grid;
+  place-items: center;
+  right: 1rem;
+  top: 1rem;
+}
+.theme .menu__image {
+  height: 15rem;
+  background-size: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 1rem 1rem 0 0;
+}
+.theme .menu__image-1 {
+  background-image: url(./assets/restaurant-1.jpg);
+}
+.theme .menu__image-2 {
+  background-image: url(./assets/restaurant-2.jpg);
+}
+.theme .menu__image-3 {
+  background-image: url(./assets/restaurant-3.jpg);
+}
+.theme .menu__image-4 {
+  background-image: url(./assets/restaurant-4.jpg);
+}
+.theme .menu__description {
+  position: relative;
+  background-color: white;
+  border-radius: 0 0 1rem 1rem;
+}
+.theme .menu__description::before {
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 400;
+  content: "\f004";
+  font-size: 2rem;
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: inherit;
+  background-clip: text;
+  -webkit-background-clip: text;
+  opacity: 1;
+  transition: all 350ms ease-in-out;
+}
+.theme .menu__description::after {
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f004";
+  font-size: 2rem;
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  opacity: 0;
+  transition: all 350ms ease-in-out;
+  background-image: linear-gradient(to top, rgb(147, 86, 220), rgb(255, 121, 218));
+}
+.theme .menu__description:hover::after {
+  opacity: 1;
+  transform: translateY(-50%) scale(1.2);
+}
+.theme .menu__description h3,
+.theme .menu__description p {
+  padding: 0, 3rem;
 }/*# sourceMappingURL=theme.css.map */
-
-.choice__menu {
-  display: flex;
-}
-
-.menu {
-  border: 1px solid black;
-  height: 4rem;
-}

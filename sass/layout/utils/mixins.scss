@@ -30,3 +30,21 @@
     opacity: $opacity;
     transition: all 350ms ease-in-out;
 }
+
+@mixin animated-heart {
+position: relative;
+background-color: white;
+border-radius: 0 0 1rem 1rem;
+
+&::before {
+    @include heart;
+}
+&::after {
+    @include heart($opacity: 0, $font-weight: 900, $color: transparent);
+    @include linear(1);
+} 
+&:hover::after {
+    opacity: 1;
+    transform: translateY(-50%) scale(1.2);
+}
+}
