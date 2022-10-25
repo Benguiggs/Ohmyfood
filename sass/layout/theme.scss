@@ -1,6 +1,6 @@
 @use "./utils/variables";
 @use "./utils/colors";
-@use "./utils/linear-gradient";
+@use "./utils/mixins";
 
 .theme {
     background-color: #F6F6F6;
@@ -52,30 +52,20 @@
             background-color: white;
             border-radius: 0 0 1rem 1rem;
 
+            &::before {
+                @include mixins.heart;
+            }
+            &::after {
+                @include mixins.heart($opacity: 0, $font-weight: 900, $color: transparent);
+                @include mixins.linear(1);
+            } 
+            &:hover::after {
+                opacity: 1;
+                transform: translateY(-50%) scale(1.2);
+            }
             h3,
             p {
-                padding: 0.3rem;
-            }
-
-            i {
-                font-size: 2rem;
-                position: absolute;
-                right: 1rem;
-                top: 50%;
-                transform: translateY(-50%);
-            }
-
-            .fas {
-                color: transparent;
-                background-clip: text;
-                -webkit-background-clip: text;
-                opacity: 0;
-                transition: all 350ms ease-in-out;
-                @include linear-gradient.linear(1);
-            }
-            &:hover .fas {
-                opacity: 1;
-                transform: translateY(-50%) scale(1.1);
+                padding: 0, 3rem;
             }
         }
     }

@@ -1,5 +1,5 @@
-@use "./utils/box-shadow";
-@use "./utils/linear-gradient";
+@use "./utils/mixins";
+
 
 .explorer {
     text-align: center;
@@ -20,12 +20,13 @@
     background-image: linear-gradient(to top,rgba(147,86,220,0.9),rgba(255,121, 218, 0.9));
     transition: transform 200ms;
     margin-top: 1rem;
-    @include  box-shadow.base-shadow;
-    @include linear-gradient.linear(0.9);
+    @include  mixins.base-shadow;
+    @include mixins.linear(0.9);
 }
 & button:hover {
     transform: scale(1.04);
     opacity: 0.9;
+    background-image: rgba(255,121, 218, 0.9);
 }
 
 }

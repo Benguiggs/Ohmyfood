@@ -80,6 +80,7 @@ header {
 .explorer button:hover {
   transform: scale(1.04);
   opacity: 0.9;
+  background-image: rgba(255, 121, 218, 0.9);
 }
 
 .liste {
@@ -180,18 +181,40 @@ header {
   background-color: white;
   border-radius: 0 0 1rem 1rem;
 }
-.theme .menu__description h3,
-.theme .menu__description p {
-  padding: 0.3rem;
-}
-.theme .menu__description i {
+.theme .menu__description::before {
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 400;
+  content: "\f004";
   font-size: 2rem;
   position: absolute;
   right: 1rem;
   top: 50%;
   transform: translateY(-50%);
+  color: inherit;
+  background-clip: text;
+  -webkit-background-clip: text;
+  opacity: 1;
+  transition: all 350ms ease-in-out;
 }
-.theme .menu__description .fas {
+.theme .menu__description::after {
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f004";
+  font-size: 2rem;
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
   color: transparent;
   background-clip: text;
   -webkit-background-clip: text;
@@ -199,9 +222,13 @@ header {
   transition: all 350ms ease-in-out;
   background-image: linear-gradient(to top, rgb(147, 86, 220), rgb(255, 121, 218));
 }
-.theme .menu__description:hover .fas {
+.theme .menu__description:hover::after {
   opacity: 1;
-  transform: translateY(-50%) scale(1.1);
+  transform: translateY(-50%) scale(1.2);
+}
+.theme .menu__description h3,
+.theme .menu__description p {
+  padding: 0, 3rem;
 }
 
 footer {
@@ -216,6 +243,14 @@ footer h2 {
 }
 footer p {
   padding: 0.2rem;
+}
+
+img {
+  max-width: 100%;
+}
+
+main h2 {
+  font-family: "Shrikhand", "sans-serif";
 }
 
 /*# sourceMappingURL=style.css.map */
