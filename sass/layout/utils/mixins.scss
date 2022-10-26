@@ -50,3 +50,21 @@ border-radius: 0 0 1rem 1rem;
     transform: translateY(-50%) scale(1.2);
 }
 }
+
+@mixin setting-btn {
+        color:white;
+        font-size: 1.5rem;
+        font-weight: 300;
+        padding: 1rem 2rem;
+        border: none;
+        border-radius: 2rem;
+        transition: transform 200ms;
+        margin-top: 1rem;
+        cursor: pointer;
+        @include  base-shadow;
+        @include linear(0.9);
+        &:hover {
+            transform: scale(1.04);
+            opacity: 0.9;
+        }
+}

@@ -70,12 +70,15 @@ header {
   padding: 1rem 2rem;
   border: none;
   border-radius: 2rem;
-  box-shadow: 2px 1px 8px -3px #000000;
-  background-image: linear-gradient(to top, rgba(147, 86, 220, 0.9), rgba(255, 121, 218, 0.9));
   transition: transform 200ms;
   margin-top: 1rem;
+  cursor: pointer;
   box-shadow: 2px 1px 8px -3px #7E7E7E;
   background-image: linear-gradient(to top, rgba(147, 86, 220, 0.9), rgba(255, 121, 218, 0.9));
+}
+.explorer button:hover {
+  transform: scale(1.04);
+  opacity: 0.9;
 }
 .explorer button:hover {
   transform: scale(1.04);
@@ -324,6 +327,20 @@ body {
     grid-template-columns: 1fr;
   }
 }
+#accueil-restaurant .food-grid h3 {
+  text-transform: uppercase;
+  font-weight: 400;
+  position: relative;
+}
+#accueil-restaurant .food-grid h3::after {
+  content: "";
+  position: absolute;
+  top: 1.5rem;
+  left: 0rem;
+  height: 0.25rem;
+  width: 3rem;
+  background-color: #99E2D0;
+}
 #accueil-restaurant .food-grid .food-menu {
   overflow: hidden;
 }
@@ -371,6 +388,9 @@ body {
   border-radius: 1rem;
   color: #99E2D0;
 }
+#accueil-restaurant .food-grid .food-menu .item-list:hover {
+  cursor: pointer;
+}
 #accueil-restaurant .food-grid .food-menu .item-list:hover .item-list__transition {
   margin-right: 0;
 }
@@ -384,6 +404,28 @@ body {
   100% {
     transform: rotate(0);
   }
+}
+#accueil-restaurant section.take-order {
+  height: 30vh;
+  display: grid;
+  place-items: center;
+}
+#accueil-restaurant section.take-order button {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 300;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 2rem;
+  transition: transform 200ms;
+  margin-top: 1rem;
+  cursor: pointer;
+  box-shadow: 2px 1px 8px -3px #7E7E7E;
+  background-image: linear-gradient(to top, rgba(147, 86, 220, 0.9), rgba(255, 121, 218, 0.9));
+}
+#accueil-restaurant section.take-order button:hover {
+  transform: scale(1.04);
+  opacity: 0.9;
 }
 
 /*# sourceMappingURL=style.css.map */

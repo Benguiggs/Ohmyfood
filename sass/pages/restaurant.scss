@@ -40,6 +40,23 @@ body {
             grid-template-columns: 1fr;
         }
 
+        h3 {
+            text-transform: uppercase;
+            font-weight: 400;
+            position: relative;
+
+            &::after {
+                content: "";
+                position: absolute;
+                top: 1.5rem;
+                left: 0rem;
+                height: 0.25rem;
+                width: 3rem;
+                background-color: colors.$color-tertiaire;
+
+            }
+        }
+
         .food-menu {
             overflow: hidden;
 
@@ -62,6 +79,7 @@ body {
                 .item-list-description {
                     padding: 1rem;
                     overflow: hidden;
+
                     h4,
                     p {
                         overflow: hidden;
@@ -93,6 +111,7 @@ body {
                 }
 
                 &:hover {
+                    cursor: pointer;
                     .item-list__transition {
                         margin-right: 0;
                     }
@@ -103,6 +122,14 @@ body {
                     }
                 }
             }
+        }
+    }
+    section.take-order {
+        height: 30vh;
+        display: grid;
+        place-items: center;
+        button {
+            @include mixins.setting-btn;
         }
     }
 }
