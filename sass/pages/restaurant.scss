@@ -1,15 +1,108 @@
 @use "../layout/utils/mixins";
+@use "../layout/utils/variables";
+@use "../layout/utils/colors";
+@use "../layout/utils/animation";
 
-.banniere img {
-    width: 100%;
-    height: 60vh;
-    object-fit: cover;
+body {
+    background-color: colors.$slightgrey;
 }
 
-.restaurant__title {
-    padding: 0 1rem;
-    h2 {
-    font-family: "Shrikhand", "cursive";
-    @include mixins.animated-heart;
+#accueil-restaurant {
+    .banniere img {
+        display: block;
+        width: 100%;
+        height: 70vh;
+        object-fit: cover;
+    }
+
+    .restaurant__title {
+        margin-top: -2rem;
+
+        h2 {
+            font-family: "Shrikhand", "cursive";
+            padding: 2rem 1rem;
+            @include mixins.animated-heart;
+            border-radius: 2rem 2rem 0 0;
+            background-color: colors.$slightgrey;
+        }
+    }
+
+    .main-restaurant {
+        padding: 0 1rem;
+    }
+
+    .food-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+
+        @media (max-width: variables.$breakpoint) {
+            grid-template-columns: 1fr;
+        }
+
+        .food-menu {
+            overflow: hidden;
+
+            .item-list {
+                display: flex;
+                background-color: white;
+                overflow: hidden;
+                border-radius: 1rem;
+                margin: 0.5rem;
+                @include mixins.base-shadow;
+
+                .item-list__price {
+                    margin-left: auto;
+                    font-weight: 900;
+                    padding: 1rem;
+                    display: flex;
+                    align-items: flex-end;
+                }
+
+                .item-list-description {
+                    padding: 1rem;
+                    overflow: hidden;
+                    h4,
+                    p {
+                        overflow: hidden;
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                    }
+                }
+
+                .item-list__transition {
+                    display: grid;
+                    place-items: center;
+                    flex-shrink: 0;
+                    $btn-effect: 4rem;
+                    border-radius: 0 1rem 1rem 0;
+                    background-color: colors.$color-tertiaire;
+                    margin-right: -$btn-effect;
+                    width: $btn-effect;
+                    transition: margin-right 0.8s;
+
+                    i {
+                        display: grid;
+                        place-items: center;
+                        background: white;
+                        aspect-ratio: 1;
+                        width: 2rem;
+                        border-radius: 1rem;
+                        color: colors.$color-tertiaire;
+                    }
+                }
+
+                &:hover {
+                    .item-list__transition {
+                        margin-right: 0;
+                    }
+
+                    i {
+                        @include animation.spin-btn;
+                        animation: spin-btn 0.7s ease-in-out;
+                    }
+                }
+            }
+        }
     }
 }

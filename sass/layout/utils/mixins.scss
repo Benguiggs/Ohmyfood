@@ -1,9 +1,11 @@
+@use "./colors";
+
 @mixin linear($opacity: 0.9) {
     background-image: linear-gradient(to top, rgba(147, 86, 220, $opacity), rgba(255, 121, 218, $opacity));
 }
 
 @mixin base-shadow {
-    box-shadow: 2px 1px 8px -3px #000000;
+    box-shadow: 2px 1px 8px -3px colors.$lightgrey;
 }
 
 @mixin zoom {
