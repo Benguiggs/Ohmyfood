@@ -1,21 +1,56 @@
 @use "./utils/mixins";
+@use "./utils/colors";
 
 
 .explorer {
     text-align: center;
-& h2 {
-    font-size: 2rem;
-}
-& p {
-    font-size: 1rem;
-}
-& button {
-    @include mixins.setting-btn;
-}
-& button:hover {
-    transform: scale(1.04);
-    opacity: 0.9;
-    
+
+    & h2 {
+        font-size: 2rem;
+    }
+
+    & p {
+        font-size: 1rem;
+    }
+
+    & button {
+        @include mixins.setting-btn;
+    }
 }
 
+.spin-loader {
+    $spin-load: 1.5s;
+    position: fixed;
+    display: grid;
+    place-items: center;
+    background-color: #FFFFFF;
+    height: 100vh;
+    inset: 0;
+    z-index: 1;
+    opacity: 0.8;
+    animation: closed 1s $spin-load forwards;
+    transform-origin: top;
+
+    &::after {
+        content: "Food";
+        font-weight: 900;
+        height: 250px;
+        width: 250px;
+        border-right: 5px solid transparent;
+        border-top: 5px solid colors.$purple;
+        border-radius: 50%;
+        animation: loading 2s ease-in-out;
+    }
+}
+
+@keyframes closed {
+    to {
+        transform: scale(0);
+    }
+}
+
+@keyframes loading {
+    to {
+        transform: rotate(360deg);
+    }
 }
