@@ -8,6 +8,15 @@ body {
 }
 
 #accueil-restaurant {
+    header::before {
+        @include mixins.iconsfontawesome($font-weight: 900);
+        content: "\f060";
+        left: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 18px;
+    }
+
     .banniere img {
         display: block;
         width: 100%;
