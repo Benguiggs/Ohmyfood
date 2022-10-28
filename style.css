@@ -247,15 +247,22 @@ footer p {
   padding: 0.2rem;
 }
 
+@keyframes grow {
+  0% {
+    transform: translateY(50%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
 body {
   background-color: #F6F6F6;
 }
 
 #accueil-restaurant header {
   cursor: pointer;
-}
-#accueil-restaurant header::before {
-  transition: all 250ms;
 }
 #accueil-restaurant header:hover::before {
   transform: translateY(-50%) scale(1.1);
@@ -274,6 +281,7 @@ body {
   top: 50%;
   transform: translateY(-50%);
   font-size: 18px;
+  transition: all 250ms;
 }
 #accueil-restaurant .banniere img {
   display: block;
@@ -355,6 +363,7 @@ body {
   text-transform: uppercase;
   font-weight: 400;
   position: relative;
+  margin-bottom: 1rem;
 }
 #accueil-restaurant .food-grid h3::after {
   content: "";
@@ -375,6 +384,17 @@ body {
   border-radius: 1rem;
   margin: 0.5rem;
   box-shadow: 2px 1px 8px -3px #7E7E7E;
+  animation: grow 2s;
+  animation-fill-mode: both;
+}
+#accueil-restaurant .food-grid .food-menu .item-list:nth-child(1) {
+  animation-delay: 200ms;
+}
+#accueil-restaurant .food-grid .food-menu .item-list:nth-child(2) {
+  animation-delay: 400ms;
+}
+#accueil-restaurant .food-grid .food-menu .item-list:nth-child(3) {
+  animation-delay: 600ms;
 }
 #accueil-restaurant .food-grid .food-menu .item-list .item-list__price {
   margin-left: auto;

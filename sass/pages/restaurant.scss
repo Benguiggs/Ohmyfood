@@ -10,22 +10,21 @@ body {
 #accueil-restaurant {
     header {
         cursor: pointer;
-        &::before{
-            transition: all 250ms;
-        }
+
         &:hover::before {
-            @include mixins.zoom(1.10,translateY(-50%)); 
+            @include mixins.zoom(1.10, translateY(-50%));
         }
 
-    &::before {
-        @include mixins.iconsfontawesome($font-weight: 900);
-        content: "\f060";
-        left: 1rem;
-        top: 50%;
-        transform: translateY(-50%);
-        font-size: 18px;
+        &::before {
+            @include mixins.iconsfontawesome($font-weight: 900);
+            content: "\f060";
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 18px;
+            transition: all 250ms;
+        }
     }
-}
 
     .banniere img {
         display: block;
@@ -63,6 +62,7 @@ body {
             text-transform: uppercase;
             font-weight: 400;
             position: relative;
+            margin-bottom:  1rem;
 
             &::after {
                 content: "";
@@ -80,12 +80,21 @@ body {
             overflow: hidden;
 
             .item-list {
+                $numberitems: 3;
+                @for $i from 1 through $numberitems {
+                    &:nth-child(#{$i}) {
+                        animation-delay: 200ms * $i;
+                    }
+                }
+
                 display: flex;
                 background-color: white;
                 overflow: hidden;
                 border-radius: 1rem;
                 margin: 0.5rem;
                 @include mixins.base-shadow;
+                animation: grow 2s;
+                animation-fill-mode: both;
 
                 .item-list__price {
                     margin-left: auto;
@@ -131,6 +140,7 @@ body {
 
                 &:hover {
                     cursor: pointer;
+
                     .item-list__transition {
                         margin-right: 0;
                     }
@@ -143,10 +153,12 @@ body {
             }
         }
     }
+
     section.take-order {
         height: 30vh;
         display: grid;
         place-items: center;
+
         button {
             @include mixins.setting-btn;
         }
