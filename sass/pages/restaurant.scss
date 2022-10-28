@@ -8,7 +8,16 @@ body {
 }
 
 #accueil-restaurant {
-    header::before {
+    header {
+        cursor: pointer;
+        &::before{
+            transition: all 250ms;
+        }
+        &:hover::before {
+            @include mixins.zoom(1.10,translateY(-50%)); 
+        }
+
+    &::before {
         @include mixins.iconsfontawesome($font-weight: 900);
         content: "\f060";
         left: 1rem;
@@ -16,6 +25,7 @@ body {
         transform: translateY(-50%);
         font-size: 18px;
     }
+}
 
     .banniere img {
         display: block;

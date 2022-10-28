@@ -8,8 +8,8 @@
     box-shadow: 2px 1px 8px -3px colors.$lightgrey;
 }
 
-@mixin zoom {
-    transform: scale(1.04);
+@mixin zoom($zoom-level: 1.04,$transformation: none) {
+    transform: $transformation scale($zoom-level);
 }
 
 @mixin iconsfontawesome($font-weight: 400) {

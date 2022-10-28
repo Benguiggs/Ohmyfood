@@ -123,7 +123,7 @@ header {
   transform: translateY(50%);
 }
 .liste li:hover {
-  transform: scale(1.04);
+  transform: none scale(1.04);
 }
 .liste li i.fas {
   margin-right: 1rem;
@@ -251,6 +251,15 @@ body {
   background-color: #F6F6F6;
 }
 
+#accueil-restaurant header {
+  cursor: pointer;
+}
+#accueil-restaurant header::before {
+  transition: all 250ms;
+}
+#accueil-restaurant header:hover::before {
+  transform: translateY(-50%) scale(1.1);
+}
 #accueil-restaurant header::before {
   display: inline-block;
   position: absolute;
