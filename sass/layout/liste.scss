@@ -16,6 +16,8 @@
 
     & li {
         position: relative;
+        display: flex;
+        align-items: center;
         &::before {
             content: counter(number-list);
             counter-increment: number-list;
@@ -40,6 +42,10 @@
 
         &:hover {
             @include mixins.zoom;
+            background-color: lighten(colors.$purple, 33%);
+            i::before {
+                color: colors.$purple;
+            }
         }
         & i.fas {
             margin-right: 1rem;
