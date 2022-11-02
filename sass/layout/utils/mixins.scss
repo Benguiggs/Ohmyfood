@@ -8,7 +8,7 @@
     box-shadow: 2px 1px 8px -3px colors.$lightgrey;
 }
 
-@mixin zoom($zoom-level: 1.04,$transformation: none) {
+@mixin zoom($zoom-level: 1.04, $transformation: null) {
     transform: $transformation scale($zoom-level);
 }
 
@@ -24,7 +24,7 @@
 }
 
 @mixin heart ($opacity :1, $font-weight: 400, $color: inherit) {
-@include iconsfontawesome($font-weight);
+    @include iconsfontawesome($font-weight);
     content: "\f004";
     font-size: 2rem;
     right: 1rem;
@@ -38,37 +38,40 @@
 }
 
 @mixin animated-heart {
-position: relative;
-background-color: white;
-border-radius: 0 0 1rem 1rem;
+    position: relative;
+    background-color: white;
+    border-radius: 0 0 1rem 1rem;
 
-&::before {
-    @include heart;
-}
-&::after {
-    @include heart($opacity: 0, $font-weight: 900, $color: transparent);
-    @include linear(1);
-} 
-&:hover::after {
-    opacity: 1;
-    transform: translateY(-50%) scale(1.2);
-}
+    &::before {
+        @include heart;
+    }
+
+    &::after {
+        @include heart($opacity: 0, $font-weight: 900, $color: transparent);
+        @include linear(1);
+    }
+
+    &:hover::after {
+        opacity: 1;
+        transform: translateY(-50%) scale(1.2);
+    }
 }
 
 @mixin setting-btn {
-        color:white;
-        font-size: 1.5rem;
-        font-weight: 300;
-        padding: 1rem 2rem;
-        border: none;
-        border-radius: 2rem;
-        transition: transform 200ms;
-        margin-top: 1rem;
-        cursor: pointer;
-        @include  base-shadow;
-        @include linear(0.9);
-        &:hover {
-            transform: scale(1.04);
-            opacity: 0.9;
-        }
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 300;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 2rem;
+    transition: transform 200ms;
+    margin-top: 1rem;
+    cursor: pointer;
+    @include base-shadow;
+    @include linear(0.9);
+
+    &:hover {
+        transform: scale(1.04);
+        opacity: 0.9;
+    }
 }
