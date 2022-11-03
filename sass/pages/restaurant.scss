@@ -18,10 +18,10 @@ body {
         &::before {
             @include mixins.iconsfontawesome($font-weight: 900);
             content: "\f060";
-            left: 1rem;
+            left: 1.8rem;
             top: 50%;
             transform: translateY(-50%);
-            font-size: 18px;
+            font-size: 22px;
             transition: all 250ms;
         }
     }
