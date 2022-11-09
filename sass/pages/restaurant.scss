@@ -95,7 +95,7 @@ body {
                 border-radius: 1rem;
                 margin: 0.5rem;
                 @include mixins.base-shadow;
-                animation: grow 2s;
+                animation: 2019.15ms ease 1s 1 normal none running grow;
                 animation-fill-mode: both;
 
                 .item-list__price {

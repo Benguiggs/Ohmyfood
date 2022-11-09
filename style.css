@@ -14,6 +14,7 @@ body {
 main {
   padding: 0 7rem;
 }
+/* Media Queries */
 @media (max-width: 1000px) {
   main {
     padding: 0 1rem;
@@ -34,7 +35,7 @@ a {
   text-decoration: none;
   color: inherit;
 }
-
+/* Header */
 header {
   font-family: "Shrikhand", cursive;
   text-align: center;
@@ -43,7 +44,7 @@ header {
   margin: 0;
   position: relative;
 }
-
+/* Localisation info */
 .ville {
   display: flex;
   align-items: center;
@@ -59,7 +60,7 @@ header {
 .ville h2 {
   font-size: 1rem;
 }
-
+/* Choice Menu */
 .explorer {
   text-align: center;
   margin: 2rem;
@@ -89,7 +90,7 @@ header {
   transform: scale(1.04);
   opacity: 0.9;
 }
-
+/* Start Loading */
 .spin-loader {
   position: fixed;
   display: grid;
@@ -131,11 +132,13 @@ header {
   display: flex;
   gap: 2rem;
 }
+/* Media Queries */
 @media (max-width: 1000px) {
   .liste ol {
     flex-direction: column;
   }
 }
+/* Choice Menu */
 .liste li {
   position: relative;
   display: flex;
@@ -179,11 +182,13 @@ header {
   background-color: #F6F6F6;
   margin-bottom: 2rem;
 }
+/* Grid Settings */
 #accueil .theme .choice__menu {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
 }
+/* Media Queries */
 @media (max-width: 1000px) {
   #accueil .theme .choice__menu {
     grid-template-columns: repeat(1, 1fr);
@@ -210,6 +215,7 @@ header {
   background-position: center;
   border-radius: 1rem 1rem 0 0;
 }
+/* Img */
 #accueil .theme .menu__image-1 {
   background-image: url(./assets/restaurant-1.jpg);
 }
@@ -276,7 +282,7 @@ header {
 #accueil .theme .menu__description p {
   padding: 0.3rem;
 }
-
+/* Footer */
 footer {
   background-color: #353535;
   padding: 1rem 2rem;
@@ -433,10 +439,11 @@ body {
   animation: grow 2s;
   animation-fill-mode: both;
 }
-#accueil-restaurant .food-grid .food-menu .item-list:nth-child(1) {
+/* Menu Appear and animation-delay */
+#accueil-restaurant .food-grid .food-menu .item-list:nth-child(2) {
   animation-delay: 200ms;
 }
-#accueil-restaurant .food-grid .food-menu .item-list:nth-child(2) {
+#accueil-restaurant .food-grid .food-menu .item-list:nth-child(1) {
   animation-delay: 400ms;
 }
 #accueil-restaurant .food-grid .food-menu .item-list:nth-child(3) {
@@ -484,6 +491,7 @@ body {
 #accueil-restaurant .food-grid .food-menu .item-list:hover .item-list__transition {
   margin-right: 0;
 }
+/* Animation button rotate when hover */
 #accueil-restaurant .food-grid .food-menu .item-list:hover i {
   animation: spin-btn 0.7s ease-in-out;
 }
